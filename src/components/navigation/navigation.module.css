@@ -1,0 +1,104 @@
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    color: var(--primary-color);
+}
+
+.nav a{
+    color: inherit;
+    text-decoration: none;
+}
+  
+.nav li{
+    list-style: none;
+}
+
+.logo  p {
+    font-family: 'Poppins-BoldItalic';
+    font-size: 1.4em;
+}
+
+.navDekstop > ul {
+    display: flex;
+    gap: 1.5rem;
+    font-family: 'Poppins-Regular';
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    gap: 7px;
+    z-index: 10002;
+}
+
+.menu span {
+    display: inline-block;
+    width: 1.7rem;
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+.navMobile {
+    display: flex; /* Tersembunyi secara default */
+    flex-direction: column;
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    width: 80vw;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    transition: left 0.3s ease-in-out;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 10001;
+    padding: 2rem;
+    font-family: 'Poppins-Regular';
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.navMobile > div > p{
+    font-size: 1.5em;
+    font-family: 'Poppins-Bold';
+}
+
+.navMobile ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    gap: 0.5rem;
+}
+
+.navActive {
+    left: 0;
+    transition: left 0.3s ease-in-out;
+}
+
+.backdrop {
+    position: fixed; /* Menempatkan di posisi tetap */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang semi-transparan */
+    backdrop-filter: blur(5px); /* Efek blur */
+    z-index: 999; /* Pastikan berada di atas layer lainnya */
+}
+
+@media screen and (max-width: 768px) {
+    .logo > p {
+        font-size: 1.2em;
+    }
+
+    .navDekstop {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+}
